@@ -1,3 +1,4 @@
+import config from './src/config/index';
 // Update with your config settings.
 
 /**
@@ -8,11 +9,11 @@ module.exports = {
   development: {
     client: 'postgresql',
     connection: {
-      host: 'localhost',
-      port: 5432,
-      user:     'postgres',
-      password: 'postgres',
-      database: 'lireddit',
+      host: config.get('liredditDb.host'),
+      port: config.get('liredditDb.port'),
+      user: config.get('liredditDb.user'),
+      password: config.get('liredditDb.password'),
+      database: config.get('liredditDb.database'),
     },
     pool: {
       min: 2,
@@ -30,11 +31,11 @@ module.exports = {
   staging: {
     client: 'postgresql',
     connection: {
-      host: 'localhost',
-      port: 5432,
-      user:     'postgres',
-      password: 'postgres',
-      database: 'lireddit',
+      host: config.get('liredditDb.host'),
+      port: config.get('liredditDb.port'),
+      user: config.get('liredditDb.user'),
+      password: config.get('liredditDb.password'),
+      database: config.get('liredditDb.database'),
     },
     pool: {
       min: 2,
@@ -52,11 +53,11 @@ module.exports = {
   production: {
     client: 'localhost',
     connection: {
-      host: 'postgres',
-      port: 5432,
-      user:     'postgres',
-      password: 'postgres',
-      database: 'lireddit',
+      host: config.get('liredditDb.host'),
+      port: config.get('liredditDb.port'),
+      user: config.get('liredditDb.user'),
+      password: config.get('liredditDb.password'),
+      database: config.get('liredditDb.database'),
     },
     pool: {
       min: 2,
